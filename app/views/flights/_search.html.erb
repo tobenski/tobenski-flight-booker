@@ -1,0 +1,9 @@
+<%= form_tag root_url, method: "get" do %>
+  <%= select_tag :from_airport, options_for_select(@airport_options, params[:from_airport]), promt: "From:" %>
+  <%= select_tag :to_airport, options_for_select(@airport_options, params[:to_airport]), promt: "To:" %>
+  <%= select_tag :date, options_for_select(@date_options, params[:date]), promt: "Date:" %>
+  <%= select_tag :passengers, options_for_select((1..4), params[:passengers]), promt: "Passengers:" %>
+  <%= submit_tag "Search", name: nil %>
+<% end %>
+
+  
