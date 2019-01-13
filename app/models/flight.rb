@@ -3,7 +3,7 @@ class Flight < ApplicationRecord
   belongs_to      :to_airport,        class_name: "Airport"
   
   def date_formatted
-    self.date.strftime("%a %b %d, %Y")
+    date.strftime("%d/%m/%Y")
   end
 
   def self.sorted
