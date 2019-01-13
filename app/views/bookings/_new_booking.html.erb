@@ -1,0 +1,7 @@
+<ul>
+  <li>Flight No: <%= @flight.id %></li><br>
+  <li>From: <%= @flight.from_airport.name %></li><br>
+  <li>To: <%= @flight.to_airport.name %></li><br>
+  <li>Date: <%= @flight.date_formatted %></li><br>
+  <li>Flight Duration: <%= distance_of_time_in_words(@flight.duration) %></li><br>
+</ul>    
