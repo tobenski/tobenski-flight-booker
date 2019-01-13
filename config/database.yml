@@ -22,4 +22,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: tobenski-flight-booker_production
+  username: tobenski-flight-booker
+  password: <%= ENV['TOBENSKI-FLIGHT-BOOKER_DATABASE_PASSWORD'] %>
