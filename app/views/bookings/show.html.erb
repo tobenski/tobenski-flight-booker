@@ -1,2 +1,21 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+
+<h1>Enjoy your trip!</h1>
+          <h3>Booking info:</h3>
+          <fieldset>
+            <ul>
+              <li>Flight No: <%= @booking.flight.id %></li><br>
+              <li>From: <%= @booking.flight.from_airport.code %></li><br>
+              <li>To: <%= @booking.flight.to_airport.code %></li><br>
+              <li>Date: <%= @booking.flight.date_formatted %></li><br>
+              <li>Flight Duration: <%= distance_of_time_in_words(@booking.flight.duration) %></li><br>
+            </ul>
+            <h4><%= "Passenger".pluralize(@booking.passengers.count) %></h4>
+              <ol>
+                <% @booking.passengers.each do |p| %>
+                  <li>
+                    <%= p.name %>
+                    <%= p.email %>
+                    </li>
+                <% end %>
+              </ol> 
+          </fieldset>
