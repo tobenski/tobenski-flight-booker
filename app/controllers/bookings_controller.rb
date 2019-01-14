@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
 
     if @booking.save
       @booking.passengers.each do |p|
-        PassengerMailer.welcome_mail(p).deliver_now
+        PassengerMailer.welcome_mail(p).deliver_now!
       end
       redirect_to @booking
     else
