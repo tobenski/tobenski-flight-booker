@@ -12,6 +12,9 @@ class BookingsController < ApplicationController
     @booking = @flight.bookings.build(booking_params)
 
     if @booking.save
+      @booking.passengers.each do |p|
+        PassengerMailer.welcome_mail(p).deliver_now
+      end
       redirect_to @booking
     else
       render :new

@@ -1,0 +1,13 @@
+<h1>Hi <%= @passenger.name %></h1>
+
+Welcome to Tobenski Airlines, 
+
+Your reservations is for <%= @passenger.booking.flight.from_airport.name %> to <%= @passenger.booking.flight.to_airport.name %>.<br />
+
+It leaves the <%= @passenger.booking.flight.date_formatted %> at: <%= @passenger.booking.flight.date.strftime("%H:%M") %> and the flight will take <%= distance_of_time_in_words(@passenger.booking.flight.duration) %>.
+
+<br /><br/>Thank you for the purchase.
+
+<br /><br />regards
+
+<br /><br /><%= link_to "Tobenski Airlines", root_url %>
